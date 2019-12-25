@@ -11,6 +11,6 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
   - Trees
   - Graph
   - Hashing
-- ** data structures are:**
+- **Miscellaneous data structures are:**
   - Recursion
   - Sorting
