@@ -1,6 +1,6 @@
 # Mastering-Data-Structures-Algorithms
 Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and Sorting.  
-## Data Structures
+## Topics
 - **Phisycal data structures are:**
   - Arrays (int A\[10\]
   - Matrices (int A\[5\]\[5\])
@@ -11,6 +11,6 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
   - Trees
   - Graph
   - Hashing
-- **Miscellaneous data structures are:**
+- **Other**
   - Recursion
   - Sorting
