@@ -12,5 +12,5 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
   - Graph
   - Hashing
 - **Other**
-  - Recursion
+  - Recursion - **very important to resolve problems!**
   - Sorting
