@@ -14,3 +14,8 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
 - **Other**
   - Recursion - **very important to resolve problems!**
   - Sorting
+
+# Pointers
+## Galvenās funkcijas
+- Piekļuve pie resursiem ārpus programmas:
+  - Atmiņas apgabals *Heap*, folderi, faili, klaviatūra, monitors, internets utt.
