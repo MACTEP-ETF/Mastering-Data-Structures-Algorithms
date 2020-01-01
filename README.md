@@ -33,8 +33,9 @@ Always have size of an integer. 2-4 bytes.
 1. (\*p).length=20; - by using *brackets* and *point*.  
 2. p -> length=20; (**->** An Arrow operator in C/C++ allows to access elements in *Structures* and *Unions*. It is used with a pointer variable pointing to a structure or union. The arrow operator is formed by using a minus sign, followed by the geater than symbol!)  
 ## Pointer inside heap memory (dynamic object)
-Regulary the pointer is located in *stuck memory* - struct Rectangle *p;  
+Regulary the pointer is located in *stuck memory* - struct Rectangle \*p;  
 For heap memory we use **malloc** function:  
+```
 int main()  
 {  
  struct Rectangle *p;  
@@ -42,7 +43,7 @@ int main()
  p->length=20;  
  p->breadth=15;  
 }  
-
+```
 # Functions
 ## What is function & Structures
 **Function** - are group of related instructions wich performe a specific tasks. Functions are also called as *modules* or *procedures*.  
