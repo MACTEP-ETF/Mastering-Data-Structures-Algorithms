@@ -15,7 +15,7 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
   - Recursion - **very important to resolve problems!**
   - Sorting
 
-# Pointers for struct
+# Pointers for structures
 ## Major functions
 - Piekļuve pie resursiem ārpus programmas:  
   - Atmiņas apgabals *Heap*, folderi, faili, klaviatūra, monitors, internets utt.  
@@ -28,9 +28,9 @@ Always have size of an integer. 2-4 bytes.
 - **Pointer to struct** - struct Rectangle **\*p**=&r; //(assign an address of 'r')  
 ## Accessing members of the structure
 ### For regular variable
-**r.**length=15;  
+r.length=15;  
 ### For pointer
-1. **(\*p).**length=20; (**(\*p).** - by using brackets and point.  
+1. **(\*p).**length=20; **\(\*p\)\.** - by using brackets and point.  
 2. p\*->length=20; (**->** An Arrow operator in C/C++ allows to access elements in *Structures* and *Unions*. It is used with a pointer variable pointing to a structure or union. The arrow operator is formed by using a minus sign, followed by the geater than symbol!)  
 ## Pointer inside heap memory (dynamic object)
 Regulary the pointer is located in *stuck memory* - struct Rectangle *p;  
