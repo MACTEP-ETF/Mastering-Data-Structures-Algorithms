@@ -46,7 +46,7 @@ int main()
 ```
 # Functions
 ## What is function & Structures
-**Function** - are group of related instructions wich performe a specific tasks. Functions are also called as *modules* or *procedures*.  
+**Function** - are group of related instructions wich perform a specific tasks. Functions are also called as *modules* or *procedures*.  
 **Structure** - are group of realated data.  
 ## Style of coding
 ### Monolitic Programming 
@@ -156,5 +156,4 @@ int main()
 }
 ```
 **Where:**
-- void swap (int **&**x, int **&**y) - just need to add an ampersands to variables in C++. That will create a nick name for variables 'a' and 'b'  
-
+- void swap (int **&** x, int **&** y) - just need to add an ampersands to variables in C++. That will create a nick name for variables 'a' and 'b'  
