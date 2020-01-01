@@ -19,7 +19,7 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
 [Pointers](#Pointers)  
 [Functions](#Functions)  
 
-<a>Pointers</a>
+<a name="Pointers"></a>
 # Pointers for structures
 ## Major functions
 - Piekļuve pie resursiem ārpus programmas:  
@@ -49,7 +49,7 @@ int main()
  p->breadth=15;  
 }  
 ```
-<a>Functions</a>
+<a name="Functions"></a>
 # Functions
 ## What is function & Structures
 **Function** - are group of related instructions wich perform a specific tasks. Functions are also called as *modules* or *procedures*.  
