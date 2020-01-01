@@ -16,8 +16,8 @@ Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and
   - Sorting
 
 # CONTENTS
-[Pointers](#Pointers)
-[Functions](#Functions)
+[Pointers](#Pointers)  
+[Functions](#Functions)  
 
 <a>Pointers</a>
 # Pointers for structures
