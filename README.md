@@ -91,7 +91,7 @@ int main()
 - (x,y) - is Actual Parameters.  
 - (int a, int b) - is Formal Parameters.  
 **Conclusion:**  
-An *add* function can't access variables of *main* fuction, and *main* function can't access the variables of *add* fuction!  
+An *add* function can't access variables of *main* fuction, and *main* function can't access the variables of *add* fuction directly!  
 ## Parametrs passing
 ### Pass by Value  (C)
 Not suitable for swapping two values! Because *void* function don't return any values.  
@@ -166,4 +166,257 @@ int main()
 
 
 # Array as Parameter
+- Array can pass only by address.  
+
+**Example A:**
+```
+void fun(int A[], int n)
+{
+ int i;
+ for(i=0; i<n; i++)
+ printf("%d",A[i]);
+}
+
+int main()
+{
+ int A[5] = {2,4,6,8,10};
+ fun(A,5);
+}
+```
+**Where:**
+- void fun(int A\[\], int n):
+  - **int A\[\]** - has no size, because function don't know the size of array. It is a **pointer** to array in main function. Also, you can write **int \*A**, and it will be a global pointer to any integer. But wrote with brackets it will point exactly to an *array* type.   
+  - **int n** - it will be show the size of array for that fuction.  
+
+**Example B:**
+```
+int * fun(int n)
+{
+ int *p;
+ p=(int *)malloc(n*sizeof(int));
+ return (p);
+}
+
+int main()
+{
+ int *A;
+ A=fun(5);
+ for(int i=0; i<5; i++)
+ printf("%d",A[i]);
+ free(A);
+ //.......
+}
+```
+**Where:**
+- **int \* fun(int n)** - that means, that function return an **pointer type**. In that example it will return an array of size of 'n'.  
+- **int \[\] fun(int n)** - this is only an array type of pointer.  
+# Structure as Parameter
+
+```
+struct Rectangle
+{
+ int length;
+ int breadth;
+};
+
+int area (struct Rectangle r1) //passed by value, because no asterisk or ampersand are written
+{
+ r1.length++;
+ return r1.length*r1.breadth;
+}
+
+int main()
+{
+ struct Rectangle r={10,5};
+ printf("%d\n", area(r));
+}
+```
+Because, "area" is called by value, that means, that the Actual Parameter will not be changed in main function, but only in area function while calculating.  
+
+- Array can be passed by value only if it is inside of the struct! *	*Example:**
+```
+struct Test
+{
+ int A[5];
+ int n;
+};
+
+void fun(struct Test t1)
+{
+ t1=A[0]=10;
+ t1=A[1]=9;
+}
+
+int main()
+{
+ struct Test t={{2,4,6,8,10},5};
+ fun(t);
+}
+
+```
+# Best style of coding in C
+```
+#include<stdio.h>
+
+struct Rectangle
+{
+ int length;
+ int breadth;
+};
+
+void initialize(struct Rectangle *r, int l, int b)
+{
+ r->length=l;
+ r->breadth=b;
+}
+
+int area(struct Rectangle r)
+{
+ return r.length*r.breadth;
+}
+
+void changeLength(struct Rectangle *r, int l)
+{
+ r->length=l;
+}
+
+//START main function
+int main()
+{
+ struct Rectangle r;
+ initialize(&r,10,5);
+ printf("Area 1 = %d",area(r));
+ changeLength(&r,20);
+ printf("Area 2 = %d",area(r));
+}
+```
+## Class and constructor in C++
+
+```
+class Rectangle
+{
+ private:
+ int length;
+ int breadth;
+
+ public:
+ //void initialize(int l, int b) - When we initialize values for members. There is no needs for extra initialization
+ Rectangle(int l, int b) //This is constructor
+ {
+  length=l;
+  breadth=b;
+ }
+
+ int area()
+ {
+  return length*breadth;
+ }
+
+ void changeLength(int l)
+ {
+  length=l;
+ }
+}; //the end of the class
+
+//START main function
+int main()
+{
+ Rectangle r(10,5); //we call an object
+ // (When we initialize values for members, see above. There is no needs for extra initialization) - r.initialize(10,5);
+ printf("Area 1 = %d",r.area());
+ r.changeLength(20);
+ printf("Area 2 = %d",r.area());
+}
+```
+**Where:**
+- **class Rectangle** - This is a class, therefore all non-main function are inside that class.  
+- **Rectangle(int l, int b)** - This is call a **constructor** in C++.  
+-  **Rectangle r(10,5);** - This is an **object** we call in main fuction. (Declaration and initialization.)  
+## Multiple data types templates in C++
+###Single type
+- This Template can work only with *int* type of data!  
+```
+class Arithmetic
+{
+ private:
+   int a;
+   int b;
+
+ public:
+   Arithmetic(int a, int b);
+   int add();
+   int sub();
+}; // this is end of the class
+
+Arithmetic::Arithmetic(int a, int b)
+{
+ this->a=a;
+ this->b=b;
+}
+
+int Arithmetic::add(int a, int b)
+{
+ int c;
+ c = a + b;
+ return c;
+}
+
+int Arithmetic::sub(int a, int b)
+{
+ int c;
+ c = a - b;
+ return c;
+}
+```
+### Generic class template
+- For multiple data type need to use **Generic class**  
+- Not always you need to change all data type to template class! **Observe carefully!**  
+```
+template<class T> //The effect of template is inside figure brackets - **{ };**
+class Arithmetic
+{
+ private:
+   T a;
+   T b;
+
+ public:
+   Arithmetic(T a, T b);
+   T add();
+   T sub();
+}; // this is end of the class
+
+template<class T> //The effect of template is inside figure brackets - **{ }**
+Arithmetic<T>::Arithmetic(T a, T b)
+{
+ this->a=a;
+ this->b=b;
+}
+
+template<class T> 
+T Arithmetic<T>::add(int a, int b)
+{
+ T c;
+ c = a + b;
+ return c;
+}
+
+template<class T> 
+T Arithmetic<T>::sub(T a, T b)
+{
+ T c;
+ c = a - b;
+ return c;
+}
+
+int main()
+{
+ Arithmetic <int> ar(10,5); //Set class for template. If you write <float> everywhere 'T' will be changes to data type 'float'
+ cout<<ar.add();
+ Arithmetic <float> ar1(1.5,4.2);
+ cout<<ar1.add();
+}
+```
+- **template<class T>** - The effect of template is inside figure brackets - **{ };**  
+- **Arithmetic <int> ar(10,5);** - Set class for template. If you write <float> everywhere **T** will be changes to data type **float**  
+
 
