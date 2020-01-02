@@ -136,8 +136,8 @@ int main()
 }
 ```
 **Where:**
-- swap(**&**a,**&**b) - should be an addreses of 'a' and 'b'.  
-- void swap (int **\***x, int **\***y) - must be a pointers. (*Also, see the code section.*)  
+- swap(**&** a,**&** b) - should be an addreses of 'a' and 'b'.  
+- void swap (int **\*** x, int **\*** y) - must be a pointers. (*Also, see the code section.*)  
 
 ### Pass by Reference (C++) (File Extension for C++: *.cpp)
 - References don't use any memory!  
