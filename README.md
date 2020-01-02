@@ -66,7 +66,8 @@ int main()
 - Increas productivity and also reusebility.  
 - Create a library of small task function.  
 - Function can't use the variables in another fuction.  
-## Terminology of fuction
+
+## Terminology of function
 
 ```
 int add (int a, int b)
