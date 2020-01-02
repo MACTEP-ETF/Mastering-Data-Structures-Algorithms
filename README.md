@@ -119,12 +119,12 @@ int main()
 - Pointers use memory and have size of **int**  
 - The Actual Parameters **will be modified** by Formal Parameters in *void* function indirectly by useing a **pointers**!  
 ```
-void swap (int \*x, int \*y)
+void swap (int *x, int *y)
 {
  int temp;
- temp = \*x;
- \*x = \*y;
- \*y = temp;
+ temp = *x;
+ *x = *y;
+ *y = temp;
 }
 int main()
 {
