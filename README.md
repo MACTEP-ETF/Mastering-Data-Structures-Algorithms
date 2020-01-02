@@ -334,7 +334,7 @@ int main()
 - **Rectangle(int l, int b)** - This is call a **constructor** in C++.  
 -  **Rectangle r(10,5);** - This is an **object** we call in main fuction. (Declaration and initialization.)  
 ## Multiple data types templates in C++
-###Single type
+### Single type
 - This Template can work only with *int* type of data!  
 ```
 class Arithmetic
