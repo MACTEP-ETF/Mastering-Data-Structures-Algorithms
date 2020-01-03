@@ -1,7 +1,9 @@
 # Mastering-Data-Structures-Algorithms
 Learn, Analyse and Implement Data Structure using C and C++. Learn Recursion and Sorting.  
+
+*Piezīme\: Esmu sapratis, ka nav jēgas tulkot video-kursu no angļu valodas uz latviešu, tāpēc teju uzreiz turpināju aizpildīt README failu angliski \:)*  
+
 ## Topics
-*Piezīme: Esmu sapratis, ka nav jēgas tulkot video-kursu no angļu valodas uz latviešu, tāpēc teju uzreiz turpināju aizpildīt README failu angliski :) *
 - **Phisycal data structures are:**
   - Arrays (int A\[10\])
   - Matrices (int A\[5\]\[5\])
