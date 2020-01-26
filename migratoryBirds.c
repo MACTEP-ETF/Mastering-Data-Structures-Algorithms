@@ -17,24 +17,23 @@ char** split_string(char*);
 // Complete the migratoryBirds function below.
 int migratoryBirds(int arr_count, int* arr) {
 
-    int max_count = 0, i, j, skaititajs, Temp;
-    int *b=malloc(arr_count*sizeof(int));
+    int i, j, skaititajs, Temp;
+    int max_count = 0;
+    int b = 0;
 
     for (i=0; i<arr_count; i++) {
         skaititajs = 0;
         
         for (j=0; j<arr_count; j++) {
-            if (arr[j] == arr[i]) {
-                skaititajs++;
-                b[i] = skaititajs;
+            if (arr[i] == arr[j]) {
+                b = ++skaititajs;
             }
         }
-        if (b[i] > max_count) {
-            max_count = b[i];
+        if (b > max_count) {
+            max_count = b;
             Temp = arr[i];
         }
     }
-    free(b);
     return Temp;
     //code did not execute within the time limits
 }
